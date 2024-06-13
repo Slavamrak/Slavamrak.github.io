@@ -1,0 +1,218 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>{{ title }}</title>
+	{% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+	<meta name="description" content="{{ description }}">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<link rel="icon" href="{% static "build/images/main.ico" %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="build/images/main.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="{{ themecolor }}">
+	<!-- Custom Browsers Color End -->
+	<script type="text/javascript" src="{% static "build/js/script.js" %}"></script>
+	<link type="text/css" href="{% static "build/css/styles.css" %}" rel="stylesheet" />
+	<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css"> 
+	
+
+</head>
+<header class="top-line">
+
+	<a href="{{ site.baseurl }}" class="logo logo-litera">ServiceGroup</a><h1 class="logo-1">ремонт цифровой техники</h1>
+<!-- 	<div class="search-wrap">
+		<div class="search" title="Пойск по сайту"><div class="fa fa-search"></div></div>
+		<div class="search-field">
+			<form action="/search.html" id="cse-search-box">
+				<input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
+				<input type="hidden" name="cof" value="FORID:10" />
+				<input type="hidden" name="ie" value="UTF-8" />
+				<input type="text" name="q" placeholder="Поиск по сайту..." />
+			</form>
+		</div>
+	</div> -->
+
+	<div class="mobile-menu-button"><i class="fa fa-bars"></i> Меню</div>
+	<nav class="main-menu top-menu">
+		<ul>
+			<li><a href="{% url 'home' %}"> Главная</a></li>
+			<li><a href="{% url 'build' %}"> Ремонт</a></li>
+			<li><a href="{% url 'sale' %}"> Акции</a></li>
+			<li><a href="#link"> Контакты</a></li>
+			<li><a href="{% url 'about' %}"> О нас</a></li>
+			<li><a href="{% url 'feedback' %}"> Обратная связь</a></li>
+		</ul>
+	</nav>
+
+</header>
+<body>
+
+	<section class="first-section">
+		<div class="container-fluid">
+			<div class="row no-gutters g-0">
+
+	
+						{%block content%}
+
+						{% endblock %}
+
+			</div>
+	
+		</div>
+	</section>
+
+	<section class="second-section">
+
+		<div class="container-fluid">
+			<div class="row">
+				
+				<div class="col-md-8">
+					
+					<h2><a href="{% url 'sale' %}">Акции</a></h2>
+					
+					<div class="row news-wrap">
+						{% for p in posts %}
+						<div class="col-md-6">
+							<div class="pattern">
+								
+								{% if p.photo %}
+								<a href="#" class="overlay item-news" style="background-image: url({{ p.photo.url }})">
+									{% endif %}
+									<div class="item-news-content">
+										<h3>{{ p.title }}</h3>
+										<span class="date">21/06/2023</span>
+										
+									</div>
+								</a>
+							</div>
+						</div>
+						{% endfor %}			
+						
+	
+					</div>
+	
+				</div>
+	
+				<div class="col-md-4">
+	
+					<div class="aside-box">
+						<div id="vk_groups"></div>
+					</div>
+	
+				</div>
+	
+			</div>
+		</div>
+	
+	</section>
+
+	<section id="link" class="third-section dark-section">
+		<div  class="conteiner-fluid">
+			<h2><a href="/">Контакты</a></h2><!-- <h2 class="cont-logo">Servicegroup-ремонт цифровой техники</h2> -->
+			<div class="row no-gutters g-0">
+				<div class="col-md-4">
+					<ul class="contact-1">
+						<li>Звоните по телефону :</li>
+						<li class="red-1">8(909)-567-45-23</li>
+						<li>Работаем :</li>
+						<li class="pn">пн-пт<br>8.00-19.00</li>
+						<li class="pn">сб<br>8.00-16.00</li>
+						<li class="pn">вс<br>выходной</li>
+						<li class="ob">обед с 13.00-14.00</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<ul class="adress">
+						<li>Находимся по адресу :</li>
+						<li class="red-2">г. Курган ул. Кирова 80<br>сервисный центр</li>
+						<li class="free">*Если не дозвонились по основному номеру то используйте этот :</li>
+						<li class="red-3">+7 (999)-555-44-33</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<div class="cart">
+						<img src="{% static "build/images/main.png" %}" alt="logo" class="img-cart">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="fourth-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<h2 class="fourth-section-header"><a href="#">2GIS</a></h2>
+				</div>
+	
+				<div class="col-md-12 col-sm-6">
+					<div class="row no-gutters g-0">
+	
+						<div class="col-md-6">
+							<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/53/kurgan/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Курган</a><a href="https://yandex.ru/maps/53/kurgan/house/ulitsa_kirova_80/YkwYdQRlSEYCQFtvfXhyd3hhZw==/?azimuth=5.480191665579752&ll=65.335518%2C55.437139&tilt=0.6697567160260446&utm_medium=mapframe&utm_source=maps&z=17" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Кирова, 80 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?azimuth=5.480191665579752&ll=65.335518%2C55.437139&mode=whatshere&tilt=0.6697567160260446&whatshere%5Bpoint%5D=65.334740%2C55.436716&whatshere%5Bzoom%5D=17&z=17" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+						</div>
+						<div class="col-md-6">
+							<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/53/kurgan/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Курган</a><a href="https://yandex.ru/maps/53/kurgan/house/ulitsa_kirova_80/YkwYdQRlSEYCQFtvfXhyd3hhZw==/panorama/?azimuth=5.480191665579752&ll=65.335518%2C55.437139&panorama%5Bdirection%5D=19.177885%2C2.989319&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=65.335020%2C55.436294&panorama%5Bspan%5D=119.927377%2C60.000000&tab=panorama&tilt=0.6697567160260446&utm_medium=mapframe&utm_source=maps&z=17" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Кирова, 80 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?azimuth=5.480191665579752&ll=65.335518%2C55.437139&mode=whatshere&panorama%5Bdirection%5D=19.177885%2C2.989319&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=65.335020%2C55.436294&panorama%5Bspan%5D=119.927377%2C60.000000&tab=panorama&tilt=0.6697567160260446&whatshere%5Bpoint%5D=65.334740%2C55.436716&whatshere%5Bzoom%5D=17&z=17" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+						</div>
+					</div>
+				</div>
+	
+			</div>
+		</div>
+	</section>
+<footer class="main-footer">
+	<div class="container">
+		<nav class="main-menu footer-menu">
+			<ul>
+				<li><a href="{% url 'home' %}"> Главная</a></li>
+				<li><a href="{% url 'build' %}"> Ремонт</a></li>
+				<li><a href="{% url 'sale' %}"> Акции</a></li>
+				<li><a href="#link"> Контакты</a></li>
+				<li><a href="{% url 'about' %}"> О нас</a></li>
+				<li><a href="{% url 'feedback' %}"> Обратная связь</a></li>
+			</ul>
+		</nav>
+		<nav class="soc">
+			<ul>
+				<li><a href="https://vk.com/service45apple"><i class="fab fa-vk"></i></a></li>
+				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#"><i class="fab fa-odnoklassniki"></i></a></li>
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="rss.xml"><i class="fa fa-rss"></i></a></li>
+			</ul>
+		</nav>
+	</div>
+</footer>
+<footer class="bottom-footer">
+	<div class="container text-center">
+		<div class="footer-copy">2024 © <span class="logo-footer logo-litera">ServiceGroup</span> </div>
+		<p>Копирование контента и размещение на других сайтах запрещено.</p>
+	</div>
+</footer>
+
+
+<script src="{% static 'build/js/script.js' %}"></script>
+<script id="dsq-count-scr" src="//service-15.disqus.com/count.js" async></script>
+
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 0, wide: 1, width: 'auto,', height: 580, color1: "e5e5e5", color2: "000000", color3: "5181B8"}, 160052512);
+</script>
+<script type="text/javascript" src="{% static "build/js/script.js" %}"></script>
+
+</body>
+</html>

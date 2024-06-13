@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>{{ title }}</title>
+	{% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+	<meta name="description" content="{{ description }}">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<!-- Template Basic Images Start -->
+	<link rel="icon" href="{% static "build/images/main.ico" %}">
+	<link rel="apple-touch-icon" sizes="180x180" href="build/images/main.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="{{ themecolor }}">
+	<!-- Custom Browsers Color End -->
+
+	<link type="text/css" href="{% static "build/css/styles.css" %}" rel="stylesheet" />
+	<script src="{% static 'build/js/script.js' %}"></script>
+	<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css"> 
+	
+
+</head>
+<header class="top-line">
+
+	<a href="{{ site.baseurl }}" class="logo logo-litera">ServiceGroup</a><h1 class="logo-1">ремонт цифровой техники</h1>
+
+<!-- 	<div class="search-wrap">
+		<div class="search" title="Пойск по сайту"><div class="fa fa-search"></div></div>
+		<div class="search-field">
+			<form action="/search.html" id="cse-search-box">
+				<input type="hidden" name="cx" value="partner-pub-xxx:xxx" />
+				<input type="hidden" name="cof" value="FORID:10" />
+				<input type="hidden" name="ie" value="UTF-8" />
+				<input type="text" name="q" placeholder="Поиск по сайту..." />
+			</form>
+		</div>
+	</div> -->
+
+	<div class="mobile-menu-button"><i class="fa fa-bars"></i> Меню</div>
+	<nav class="main-menu top-menu">
+		<ul>
+			<li><a href="{% url 'home' %}"> Главная</a></li>
+			<li><a href="{% url 'build' %}"> Ремонт</a></li>
+			<li><a href="blog/sale"> Акции</a></li>
+			<li><a href="{% url 'home' %}"> Контакты</a></li>
+			<li><a href="{% url 'about' %}"> О нас</a></li>
+			<li><a href="{% url 'feedback' %}"> Обратная связь</a></li>
+		</ul>
+	</nav>
+
+</header>
+<body>
+
+<div class="pattern pattern-cat-header">
+	<div class="cat-header header-about">
+		<div class="cat-header-block">
+			<h1>О сайте ServiceGroup</h1>
+		</div>
+	</div>
+</div>
+<div class="article-content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8">
+				<article class="main-article">
+					<div class="article-body">
+						<p class="zagolovok">Юридические данные о компании</p>
+							<p class="glav">&nbspРеквизиты</p>
+							<p>Полное название организации: ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "ИНСТРУМЕНТАЛЬЩИК".</p>
+							<p>Английское название: OOO "INSTRUMENTALSHCHIK".</p>
+							<p>Адрес: Курганская обл., г. Курган, ул. Омская, д. 151.</p>
+							<p>Уставный капитал: 45 000.</p>
+							<p>ОКФС: Частная собственность.</p>
+							<p>ОКОПФ: Общества с ограниченной ответственностью.</p>
+							<p>ОКОГУ: Организации, учрежденные юридическими лицами или гражданами, или юридическими лицами и гражданами совместно.</p>
+							<p>ИНН: 4501139177.</p>
+							<p>ОГРН: 1084501003256.</p>
+							<p>КПП: 450101001.</p>
+							<p>ОКАТО: Курганская область, Курган.</p>
+							<p>ОКПО: 80656631.</p>
+							<p>ОКТМО: Курганская область, Городские округа Курганской области, г Курган.</p>
+							<p class="glav">Электронная почта: Davydov-Slava00@mail.ru</p>
+							<p class="glav">Информация о компании</p>
+							<p>Руководитель: Богомолов Алексей Владимирович, генеральный директор.</p>
+							<p>Регистрирующий орган: Управление ФНС России по Курганской области.</p>
+							<p>Адрес регистрирующего органа: 640000, Курганская область, г.Курган, ул.Климова, 60.</p>
+
+							<p class="glav">Виды деятельности</p>
+							<p>Основной вид деятельности: Ремонт цифровой техники.</p>
+
+							<p class="glav">Описание</p>
+							<p>Компания ООО ИНСТРУМЕНТАЛЬЩИК</p>
+							<p>Адрес: Курганская обл., г. Курган, ул. Омская, д. 151.</p>
+							<p>Зарегистрирована 01.04.2008.</p>
+							<p>Организации присвоены ИНН 4501139177, ОГРН 1084501003256, КПП 450101001.</p> 
+							<p>Основным видом деятельности является торговля розничная непродовольственными товарами, не включенными в другие группировки, в специализированных магазинах, всего зарегистрировано 35 видов деятельности по ОКВЭД. Связи с другими компаниями отсутствуют.</p>
+							<p>Количество совладельцев (по данным ЕГРЮЛ): 1, генеральный директор - Богомолов Алексей Владимирович.</p>
+							<p>Размер уставного капитала 45 000₽.</p>
+							<p>Компания ООО ИНСТРУМЕНТАЛЬЩИК не принимала участие в тендерах.</p>
+							<p>В отношении компании было возбуждено 14 исполнительных производств, из них текущих 1. ООО ИНСТРУМЕНТАЛЬЩИК участвовало в 2 арбитражных делах: в 2 в качестве ответчика.</p>
+
+					</div>
+				</article>
+			</div>
+			<div class="col-md-4">
+				<aside class="main-aside">
+
+					<div class="aside-box">
+						<div id="vk_groups"></div>
+					</div>
+				
+					<div class="aside-box">
+						<div class="latest-comments">
+							<div class="lb-header">Последние комментарии:</div>
+							<script type="text/javascript" src="https://service-15.disqus.com/recent_comments_widget.js?num_items=2&amp;hide_avatars=0&amp;avatar_size=26&amp;excerpt_length=150"></script>
+						</div>
+					</div>
+				
+				</aside>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="main-footer">
+	<div class="container">
+		<nav class="main-menu footer-menu">
+			<ul>
+				<li><a href="{% url 'home' %}"> Главная</a></li>
+				<li><a href="{% url 'build' %}"> Ремонт</a></li>
+				<li><a href="blog/sale"> Акции</a></li>
+				<li><a href="#link"> Контакты</a></li>
+				<li><a href="{% url 'about' %}"> О нас</a></li>
+				<li><a href="{% url 'feedback' %}"> Обратная связь</a></li>
+			</ul>
+		</nav>
+		<nav class="soc">
+			<ul>
+				<li><a href="https://vk.com/service45apple"><i class="fab fa-vk"></i></a></li>
+				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#"><i class="fab fa-odnoklassniki"></i></a></li>
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="rss.xml"><i class="fa fa-rss"></i></a></li>
+			</ul>
+		</nav>
+	</div>
+</footer>
+<footer class="bottom-footer">
+	<div class="container text-center">
+		<div class="footer-copy">2024 © <span class="logo-footer logo-litera">ServiceGroup</span> </div>
+		<p>Копирование контента и размещение на других сайтах запрещено.</p>
+	</div>
+</footer>
+
+<script id="dsq-count-scr" src="//service-15.disqus.com/count.js" async></script>
+
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+
+<script type="text/javascript">
+VK.Widgets.Group("vk_groups", {mode: 0, wide: 1, width: 'auto,', height: 580, color1: "e5e5e5", color2: "000000", color3: "5181B8"}, 160052512);
+</script>
+<script src="{% static 'build/js/script.js' %}"></script>
+
+
+
+</body>
+</html>
+
